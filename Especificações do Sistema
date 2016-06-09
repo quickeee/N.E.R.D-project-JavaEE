@@ -1,0 +1,58 @@
+HanGeek: Hangman for Geeks
+
+A tela inicial do HanGeek possuirá duas escolhas: Single Player e Multiplayer.
+
+Ao escolher entre Single e Multiplayer, o sistema deverá perguntar ao usuário se ele deseja efetuar login ou continuar como
+usuário convidado (ou anônimo).
+In-App Purchases não são permitidas para usuários convidados.
+
+Single Player: Ao abrir o Single Player, o usuário poderá selecionar entre vários temas (Exemplos: Star Wars, Animes, Tokusatsus, etc).
+Cada pack(pacote) de palavras possui um rank de pontos que é correspondente a quantidade de letras acertadas, letras erradas, jogos vencidos e jogos perdidos.
+Conforme a quantidade de pontos for maior em determinada pack, novos níveis são desbloqueados. 
+Exemplo:
+Lv. 1 - 0 points
+Lv. 2 - 100 points
+Lv. 3 - 200 points
+Lv. 4 - 500 points
+Lv. 5 - 1000 points
+Hidden Lv. - Premium Only
+
+Guessing (Adivinhação): 
+  - Por letra: 
+      * Limite de seis erros por palavra: Se seis letras incorretas forem escolhidas antes de completar a palavra, o boneco (Hanged Man)
+  vai ser formado por completo e enforcado;
+      * Limite de um uso por letra: No caso de uma letra já usada for escolhida, o sistema deve avisar que a letra não pode ser usada, e
+      se houver duas ou mais letras correspondentes da letra escolhida na palavra selecionada, todas essas letras devem ser reveladas.
+  - Risky Guess:
+      * Acertando a palavra = Win;
+      * Errando a palavra = Instant Game Over;
+      
+Multiplayer:
+
+Modos:
+  - Random Mode: 
+      * O oponente é escolhido aleatoriamente;
+      * A partida é decidida por melhor de três (limite de cinco partidas);
+  
+  - Invite Player: 
+      * Convite de Player por Username; 
+      * Partida decidida por melhor de três; 
+      * Botão de Revenge (Vingança);
+      
+  - Chaos Mode:
+      * 6 a 8 Players;
+      * Limite de tempo;
+      * Quem acertar mais palavras ganha;
+  
+Loja:
+  - Premium Account:
+    * Sem propagandas;
+    * Todos os níveis desbloqueados;
+    * Hidden Level desbloqueado;
+  - In-App:
+    - Moeda: GeekCoins - GeekCoins podem ser compradas em dinheiro e são utilizadas para fazer as transações In-App da loja.
+    Com GeekCoins você pode comprar:
+    * Hints (Dicas);
+    * Temas Especiais;
+    * Custom Hangman (Exemplos: Darth Vader, Naruto, etc);
+    
