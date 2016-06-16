@@ -1,0 +1,176 @@
+Create table Categoria (
+    idCategoria serial primary key,
+    descCategoria varchar(60));
+
+Create table Nivel (
+    idNivel serial primary key,
+    descNivel varchar(60));
+
+create table Palavra (
+    idPalavra serial primary key,
+    palavra varchar(60),
+    dica varchar(60),
+    peso int,
+    idCategoria int References Categoria,
+    idNivel int References Nivel);
+
+create table usuario (
+    idUsuario serial primary key,
+    nomeUsuario varchar(60),
+    email varchar(60),
+    senha varchar(32), --md5
+    premium boolean, --conta premium
+    gold int check(gold>=0), --dinheiro
+    nivel int check(nivel>=0),
+    experiencia int check(experiencia>=0));
+
+--Lista tabelas criadas
+select tablename from pg_tables where schemaname='public';
+
+insert into Categoria (descCategoria) values ('Star Wars'),
+                                             ('Pokemon'),
+                                             ('Digimon'),
+                                             ('Game of Thrones'),
+                                             ('The Big Bang Theory'),
+                                             ('Marvel'),
+                                             ('DC Comics'),
+                                             ('Harry Potter'),
+                                             ('Star Trek'),
+                                             ('Naruto');
+
+insert into Nivel (descNivel) values ('Noob'),
+                                     ('Principiante'),
+                                     ('Intermediario'),
+                                     ('Experiente'),
+                                     ('Avancado'),
+                                     ('Mestre'),
+                                     ('Rei dos Nerds'),
+                                     ('Deus dos Nerds');
+
+insert into Palavra (palavra, dica, peso, idCategoria, idNivel) 
+    values ('Luke Skywalker','',1,1,1), -- incio da categoria Star Wars
+           ('Han Solo','',1,1,1),
+           ('Império Galáctico','',1,1,1),
+           ('Aliança Rebelde','',1,1,1),
+           ('Estrela da Morte','',1,1,1),
+           ('Estrela da Morte','',1,1,1),
+           ('Leia Organa','',1,1,1),
+           ('Darth Vader','',1,1,1),
+           ('Tatooine','',1,1,1),
+           ('Obi-Wan Kenobi','',1,1,1),
+           ('Anakin Skywalker','',1,1,1),
+           ('Chewbacca','',1,1,1),
+           ('Stormtroopers','',1,1,1),
+           ('Millennium Falcon','',1,1,1),
+           ('Yoda','',1,1,1),
+           ('Jedi','',1,1,1),
+           ('Lightsaber','',1,1,1),
+           ('Ash Ketchum','',1,2,1), --incio da categoria Pokemon
+           ('Pikachu','',1,2,1),
+           ('Brock','',1,2,1),
+           ('Misty','',1,2,1),
+           ('Equipe Rocket','',1,2,1),
+           ('Jessie','',1,2,1),
+           ('James','',1,2,1),
+           ('Meowth','',1,2,1),
+           ('Pikachu','',1,2,1),
+           ('Kanto','',1,2,1),
+           ('Digivices','',1,3,1), -- incio da categoria Digimon
+           ('Digimundo','',1,3,1),
+           ('Ilha Arquivo','',1,3,1),
+           ('Gennai','',1,3,1),
+           ('Digiescolhidos','',1,3,1),
+           ('Tai Kamiya','',1,3,1),
+           ('Agumon','',1,3,1),
+           ('Matt Ishida','',1,3,1),
+           ('Gabumon','',1,3,1),
+           ('Sora Takenouchi','',1,3,1),
+           ('Piyomon','',1,3,1),
+           ('Koushirou Izumi','',1,3,1),
+           ('Tentomon','',1,3,1),
+           ('Mimi Tachikawa','',1,3,1),
+           ('Palmon','',1,3,1),
+           ('Joe Kido','',1,3,1),
+           ('Gomamon','',1,3,1),
+           ('T.K. Takaishi','',1,3,1),
+           ('Patamon','',1,3,1),
+           ('Kari Kamiya','',1,3,1),
+           ('Tailmon','',1,3,1),
+           ('Westeros','',1,4,3), -- incio da categoria Game of Thrones
+           ('Trono de Ferro','',1,4,3),
+           ('Tyrion Lannister','',1,4,3),
+           ('Jaime Lannister','',1,4,3),
+           ('Cersei Lannister','',1,4,3),
+           ('Daenerys Targaryen','',1,4,3),
+           ('Jon Snow','',1,4,3),
+           ('Robb Stark','',1,4,3),
+           ('Catelyn Stark','',1,4,3),
+           ('Leonard Hofstadter','',1,5,3), -- incio da categoria The Big Bang Theory
+           ('Sheldon Cooper','',1,5,3),
+           ('Penny','',1,5,3),
+           ('Howard Wolowitz','',1,5,3),
+           ('Rajesh Koothrappali','',1,5,3),
+           ('Amy Farrah Fowler','',1,5,3),
+           ('Bernadette Rostenkowski','',1,5,3),
+           ('Stuart Bloom','',1,5,3),
+           ('Leslie Winkle','',1,5,3),
+           ('Sra. Wolowitz','',1,5,3),
+           ('Klingon Boggle','',1,5,3),
+           ('Bazinga','',1,5,3),
+           ('Soft Kitty','',1,5,3),
+           ('Spiderman','',1,6,1), -- incio da categoria Marvel
+           ('Ironman','',1,6,1),
+           ('Deadpool','',1,6,1),
+           ('Wolverine','',1,6,1),
+           ('Mystique','',1,6,1),
+           ('Cyclops','',1,6,1),
+           ('Thor','',1,6,1),
+           ('Hulk','',1,6,1),
+           ('X-men','',1,6,1),
+           ('Coisa','',1,6,1),
+           ('Demolidor','',1,6,1),
+           ('Batman','',1,7,1), -- incio da categoria DC Comics
+           ('Superman','',1,7,1),
+           ('Lanterna Verde','',1,7,1),
+           ('Mulher Maravilha','',1,7,1),
+           ('Aquaman','',1,7,1),
+           ('Flash','',1,7,1),
+           ('Coringa','',1,7,1),
+           ('Arqueiro Verde','',1,7,1),
+           ('Harry Potter','',1,8,1), -- incio da categoria Harry Potter
+           ('Ronald Weasley','',1,8,1),
+           ('Hermione Granger','',1,8,1),
+           ('Hogwarts','',1,8,1),
+           ('J K Rowling','',1,8,1),
+           ('Dumbledore','',1,8,1),
+           ('Sonserina','',1,8,1),
+           ('Corvinal','',1,8,1),
+           ('Lufa-Lufa','',1,8,1),
+           ('Grifinória','',1,8,1),
+           ('Azkaban','',1,8,1),
+           ('Capitão James T Kirk','',1,8,2), -- incio da categoria Star Trek
+           ('Spock','',1,8,2),
+           ('Enterprise','',1,8,2),
+           ('Klingons','',1,8,2),
+           ('Vulcanos','',1,8,2),
+           ('Phaser','',1,8,2),
+           ('Dr Leonard McCoy','',1,8,2),
+           ('Montgomery Scott','',1,8,2),
+           ('Uhura','',1,8,2),
+           ('Hikaru Sulu','',1,8,2),
+           ('Pavel Chekov','',1,8,2),
+           ('Naruto Uzumaki','',1,9,2),  -- incio da categoria Naruto
+           ('Sakura Haruno','',1,9,2),
+           ('Sasuke Uchiha','',1,9,2),
+           ('Hokage','',1,9,2),
+           ('Kazekage','',1,9,2),
+           ('Raikage','',1,9,2),
+           ('Mizukage','',1,9,2),
+           ('Tsuchikage','',1,9,2),
+           ('Kakashi Hatake','',1,9,2),
+           ('Konoha','',1,9,2),
+           ('Akatsuki','',1,9,2),
+           ('Tsunade','',1,9,2),
+           ('Jiraya','',1,9,2),
+           ('Orochimaru','',1,9,2),
+           ('Sharingan','',1,9,2);
