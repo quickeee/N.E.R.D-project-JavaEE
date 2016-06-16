@@ -19,6 +19,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>faces/SelecaoCategoria.xhtml</welcome-file>
+        <welcome-file>faces/ModoDeJogo.xhtml</welcome-file>
     </welcome-file-list>
 </web-app>
