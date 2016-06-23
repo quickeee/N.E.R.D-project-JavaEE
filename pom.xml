@@ -2,10 +2,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.woehlke</groupId>
-    <artifactId>javaee7-petclinic</artifactId>
+    <artifactId>javaee7-hangeek</artifactId>
     <packaging>war</packaging>
     <version>1.3-SNAPSHOT</version>
-    <name>javaee7-petclinic</name>
+    <name>javaee7-hangeek</name>
 
     <url>http://www.thomas-woehlke.de/p/javaee7-petclinic</url>
 
