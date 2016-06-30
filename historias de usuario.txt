@@ -1,0 +1,70 @@
+﻿Histórias de Usuário
+
+1) Personas: Jogador
+
+Sendo Jogador
+Posso Selecionar o tema da palavra
+Para tentar adivinhar a palavra dentro daquele tema.
+
+2) Personas: Jogador
+
+Sendo Jogador
+Posso Selecionar uma letra
+Para descobrir se a palavra possui ou não aquela letra.
+
+3) Personas: Sistema
+
+Dado que a letra selecionada já foi informada anteriormente
+Quando a letra for informada para o sistema
+Então a letra não é aceita
+E o sistema informa que "a letra já foi usada".
+
+4) Personas: Sistema
+
+Dado que a letra selecionada não foi informada anteriormente
+E é uma letra que está presente na palavra selecionada pelo sistema
+Quando a letra for informada para o sistema
+Então o sistema revela a(s) letra(s) encontrada(s) da palavra.
+
+5) Personas: Sistema
+
+Dado que a letra selecionada não foi informada anteriormente
+E é uma letra que não está presente na palavra selecionada pelo sistema
+Quando a letra for informada para o sistema
+Então o sistema informará que a letra não se encontra na palavra
+E um dos membros do corpo do boneco será desenhado.
+
+6) Personas: Jogador, Sistema
+
+Dado que o jogador escolheu cinco letras incorretas
+No caso do jogador escolher a sexta letra incorreta antes de formar a palavra inteira
+Então o sistema formara o corpo inteiro do boneco
+E enforcará o boneco, e em seguida mostrará a tela de fim de jogo.
+
+7) Personas: Jogador, Sistema
+
+Dado que o jogador conseguiu formar a palavra
+Quando a ultima letra correta for informada para o sistema
+Então o sistema mostrará a tela de vitória.
+
+8) Personas: Jogador
+
+Sendo Jogador
+Posso fazer uma tentativa de adivinhar a palavra selecionada (risky guess)
+Para descobrir se a palavra escolhida é ou não a palavra selecionada.
+
+9) Personas: Jogador, Sistema
+
+Dado que o jogador resolve fazer uma tentativa de adivinhar a palavra (risky guess)
+E a palavra escolhida é a palavra selecionada pelo sistema
+Quando a palavra for informada para o sistema
+Então o sistema mostrará a tela de vitória.
+
+
+10) Personas: Jogador, Sistema
+
+Dado que o jogador resolve fazer uma tentativa de adivinhar a palavra (risky guess)
+E a palavra escolhida não é a palavra selecionada pelo sistema
+Quando a palavra for informada para o sistema
+O boneco será completamente formado e enforcado
+E o sistema mostrará a tela de fim de jogo.
